@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="pull_channel">Загрузка систем</string>
+    <string name="pull_title">ArmUian: загрузка системы</string>
+</resources>

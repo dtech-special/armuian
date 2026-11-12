@@ -1,0 +1,9 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Нужно, чтобы определить, какой менеджер root установлен (подсказка, не доказательство). -->
+    <queries>
+        <package android:name="me.weishu.kernelsu" />
+        <package android:name="com.rifsxd.ksunext" />
+        <package android:name="com.sukisu.ultra" />
+        <package android:name="com.topjohnwu.magisk" />
+    </queries>
+</manifest>
