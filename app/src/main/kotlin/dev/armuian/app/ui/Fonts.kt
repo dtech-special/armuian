@@ -23,7 +23,7 @@ object AppFonts {
     private val weights = listOf(FontWeight.Light, FontWeight.Normal, FontWeight.Medium, FontWeight.SemiBold, FontWeight.Bold)
 
     private fun variable(resId: Int) = FontFamily(
-        weights.map { w -> Font(resId, w, FontStyle.Normal, FontVariation.Settings(w, FontStyle.Normal)) }
+        weights.map { w -> Font(resId, w, FontStyle.Normal, variationSettings = FontVariation.Settings(w, FontStyle.Normal)) }
     )
 
     val inter: FontFamily = variable(R.font.inter_variable)
