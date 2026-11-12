@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">ArmUian</string>
+    <string name="app_name" translatable="false">ArmUian</string>
     <string name="version_fmt">Version %1$s</string>
     <string name="detecting">Detecting device parameters…</string>
     <string name="unavailable">Unavailable</string>
