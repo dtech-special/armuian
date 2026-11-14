@@ -1,36 +1,66 @@
-# ArmUian
+# OctaneUI
 
-Менеджер отдельных Android userspace-сред поверх ядра основной Android-системы.
-Не эмулятор, не VM, не клонер приложений.
+<p align="center">
+</p>
 
-**Автор:** TikTok [@techdelta](https://www.tiktok.com/@techdelta) · GitHub [@dtech-special](https://github.com/dtech-special)
+<h3 align="center">Your device. Your choice.</h3>
 
-## Статус (этап 4: интерфейс + bootstrapper)
-**Интерфейс (Material 3, 5 вкладок):** Главная · Системы · Устройство · Консоль · Настройки (+ «О проекте и лицензии»). Динамические цвета, светлая/тёмная тема, 4 языка (ru/en/de/zh).
+<p align="center">
+  An experimental project for running alternative firmware without reflashing your device every time.
+</p>
 
-**Рабочее:**
-- Определение устройства (ABI, Android, ядро, SELinux, Binder, namespaces, KVM), проверка root через уже установленный KernelSU.
-- **Bootstrapper:** подбор образа по версии Android хоста → получение манифеста Docker Hub (linux/arm64) и точного размера → экран подтверждения → предупреждение о мобильной сети → фоновая загрузка (WorkManager) с докачкой, SHA256, распаковкой слоёв → пауза / возобновление / отмена / удаление, проверка обновлений. Состояние переживает перезапуск.
-- Проверка совместимости контейнера по реальным данным ядра (через root), настоящая консоль-журнал (JetBrains Mono), настройки (DataStore), двухэтапная кнопка запуска.
+<p align="center">
+  <img src="https://img.shields.io/badge/Project-Experimental-555555?style=flat-square" alt="Project status">
+  <img src="https://img.shields.io/badge/Platform-ARM64-blue?style=flat-square" alt="Platform">
+  <img src="https://img.shields.io/badge/Status-In%20Development-orange?style=flat-square" alt="Development status">
+</p>
 
-**Честно, пока НЕ работает:** сам запуск Android-контейнера. `AndroidHostBackend` проверяет совместимость и всегда возвращает «Неподдерживаемая конфигурация» (`IMPLEMENTED = false`) — запуск redroid на Android-хосте ещё не реализован. Не работают: Container Root (UI показывает Unsupported), графический мост, App Bridge, ручной выбор акцентного цвета.
+---
 
-Образы пока устанавливаются в каталог приложения (`filesDir/armuian`); перенос в `/data/adb/armuian` потребует root-распаковки (владельцы файлов, xattr, SELinux-метки).
+## About
 
-## Кастомизация
-Настройки → «Кастомизация»: тема и динамические цвета; **панель навигации** — Frosted Glass (настоящий backdrop blur, Android 12+, с регулировкой интенсивности), Glass, Solid; **шрифты** — Inter, Google Sans Flex (интерфейс) и JetBrains Mono (терминал и логи), два независимых выбора, превью и сброс. Шрифты — variable-файлы под SIL OFL 1.1; лицензии лежат в `licenses/` и в приложении (О проекте → Лицензии).
+Why reflash your device every time you want to try another firmware?
 
-## Shared PID и журнал запуска
-Запуск гостя пишет реальный журнал (root → образ → подготовка → propagation → mount → запуск → подтверждение/ошибка). Открыть: карточка «Гостевая среда» → «Журнал запуска», либо кнопка в уведомлении об ошибке. Фильтр уровней, копирование записи/всего журнала, stack trace.
+OctaneUI is an experimental project built around making alternative firmware environments easier to launch and manage.
 
-## Сборка
-Откройте папку в Android Studio (Ladybug+), дождитесь Gradle Sync, запустите `app`.
-CLI: `gradle testDebugUnitTest assembleDebug`.
+The idea is simple: one installed system, multiple firmware experiences.
 
-## Форки
-Разрешены. Сохраняйте уведомления об авторских правах и текст Apache 2.0, указывайте, что проект основан на ArmUian, ссылайтесь на оригинальный репозиторий и описывайте существенные изменения.
+## What we're working on
 
-## Лицензия
-Apache License 2.0 — см. LICENSE.
+- Alternative firmware environments
+- Firmware configuration management
+- Switching between available environments
+- A unified user interface
+- Device compatibility
 
-> Обновляя проект, **удаляйте старую папку целиком** перед распаковкой нового архива: старые файлы (например, прежний `AndroidHostBackend.kt`) иначе останутся и вызовут ошибки «Redeclaration».
+## Project status
+
+**Currently in development.**
+
+Compatibility, installation instructions and technical documentation will be added as development progresses.
+
+## Project information
+
+| | |
+|---|---|
+| Name | OctaneUI |
+| Type | Firmware environment manager |
+| Architecture | To be determined |
+| License | Not specified yet |
+| Status | Experimental |
+
+## Follow
+
+<p align="center">
+  <a href="https://www.tiktok.com/@techdelta">
+    <img src="https://img.shields.io/badge/TikTok-@techdelta-black?style=for-the-badge&logo=tiktok" alt="TikTok">
+  </a>
+</p>
+
+---
+
+<p align="center">
+  **OctaneUI**
+  <br>
+  <sub>Built for experimentation.</sub>
+</p>
