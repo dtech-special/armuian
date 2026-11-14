@@ -60,7 +60,7 @@ Compatibility, installation instructions and technical documentation will be add
 ---
 
 <p align="center">
-  **OctaneUI**
+  OctaneUI
   <br>
   <sub>Built for experimentation.</sub>
 </p>
